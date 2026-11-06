@@ -1,0 +1,20 @@
+# Render blueprint. A persistent disk needs a paid instance; SQLite and report photos live on it.
+services:
+  - type: web
+    name: saveher
+    runtime: node
+    plan: starter
+    buildCommand: npm ci --omit=dev
+    startCommand: node server/index.js
+    healthCheckPath: /api/health
+    envVars:
+      - { key: NODE_VERSION, value: "22" }
+      - { key: NODE_ENV, value: production }
+      - { key: DB_PATH, value: /var/data/saveher.db }
+      - { key: UPLOAD_DIR, value: /var/data/uploads }
+      - { key: PUBLIC_URL, sync: false }
+      - { key: TWILIO_ACCOUNT_SID, sync: false }
+      - { key: TWILIO_AUTH_TOKEN, sync: false }
+      - { key: TWILIO_FROM, sync: false }
+      - { key: CONTACT_EMAIL, sync: false }
+    disk: { name: saveher-data, mountPath: /var/data, sizeGB: 1 }

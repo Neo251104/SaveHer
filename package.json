@@ -1,0 +1,25 @@
+{
+  "name": "saveher",
+  "version": "1.0.0",
+  "description": "SaveHer: personal safety app (SOS, live location sharing, community safety map, incident reporting)",
+  "main": "server/index.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "seed": "node server/seed.js",
+    "test": "node --test \"test/*.test.js\""
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "express": "^4.22.3",
+    "leaflet": "^1.9.4"
+  },
+  "devDependencies": {
+    "jsdom": "^31.0.0"
+  }
+}

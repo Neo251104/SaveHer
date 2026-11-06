@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SaveHer: Safe. Alert. Empowered.</title>
+<meta name="description" content="SaveHer is a personal safety app: SOS, live location sharing, a community safety map and incident reporting.">
+<meta name="theme-color" content="#12041f">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="stylesheet" href="/vendor/leaflet.css">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<div id="app">
+  <aside class="side" id="side" style="display:none" aria-label="Main navigation"></aside>
+  <main id="view" tabindex="-1" aria-live="polite"><div class="spin" role="status" aria-label="Loading"></div></main>
+  <nav class="tabs" id="tabs" style="display:none" aria-label="Main navigation"></nav>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+<noscript><p style="padding:24px">SaveHer needs JavaScript. If you are in danger, call 112.</p></noscript>
+<script src="/vendor/leaflet.js"></script>
+<script src="/lib.js"></script>
+<script src="/screens.js"></script>
+</body>
+</html>
